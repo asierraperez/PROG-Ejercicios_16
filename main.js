@@ -3,6 +3,7 @@ function main() {
     var contador = 0
     var btn_enviar = document.getElementById("envio")
     var selector = document.getElementsByClassName("check")
+    var edad = document.getElementsByClassName("radio")
     btn_enviar.addEventListener("click", (evt) => {
         comprueba_numeros(evt)
         comprueba_dni(evt)
@@ -19,6 +20,17 @@ function main() {
     })
     selector[3].addEventListener("change", (evt) => {
         contador = aficiones(evt, contador, selector[3].checked, selector[3])
+    })
+
+    edad[0].addEventListener("change", (evt) => {
+        cambio_aficiones(evt, edad, selector)
+        selector[0]
+    })
+    edad[1].addEventListener("change", (evt) => {
+        cambio_aficiones(evt, edad, selector)
+    })
+    edad[2].addEventListener("change", (evt) => {
+        cambio_aficiones(evt, edad, selector)
     })
 
 }
