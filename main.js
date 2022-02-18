@@ -1,9 +1,12 @@
 function main() {
 
     var contador = 0
+    var cuenta_caracteres = 0
     var btn_enviar = document.getElementById("envio")
     var selector = document.getElementsByClassName("check")
     var edad = document.getElementsByClassName("radio")
+    var comentarios = document.getElementById("comentarios")
+
     btn_enviar.addEventListener("click", (evt) => {
         comprueba_numeros(evt)
         comprueba_dni(evt)
@@ -24,13 +27,17 @@ function main() {
 
     edad[0].addEventListener("change", (evt) => {
         cambio_aficiones(evt, edad, selector)
-        selector[0]
     })
     edad[1].addEventListener("change", (evt) => {
         cambio_aficiones(evt, edad, selector)
     })
     edad[2].addEventListener("change", (evt) => {
         cambio_aficiones(evt, edad, selector)
+    })
+
+    comentarios.addEventListener("keyup", (evt) => {
+        max_caracteres(evt, comentarios.value, comentarios)
+
     })
 
 }
