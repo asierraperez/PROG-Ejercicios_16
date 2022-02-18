@@ -1,11 +1,16 @@
 function main() {
 
     var contador = 0
-    var cuenta_caracteres = 0
     var btn_enviar = document.getElementById("envio")
     var selector = document.getElementsByClassName("check")
     var edad = document.getElementsByClassName("radio")
     var comentarios = document.getElementById("comentarios")
+    var btn_reset = document.getElementById("reset")
+
+    for (let i = 0; i < selector.length; i++) {
+        selector[i].nextSibling.textContent = ""
+        selector[i].disabled = true
+    }
 
     btn_enviar.addEventListener("click", (evt) => {
         comprueba_numeros(evt)
@@ -38,6 +43,11 @@ function main() {
     comentarios.addEventListener("keyup", (evt) => {
         max_caracteres(evt, comentarios.value, comentarios)
 
+    })
+
+    btn_reset.addEventListener("click", (evt) => {
+
+        contador = reset_form(evt, selector, contador)
     })
 
 }

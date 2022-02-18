@@ -1,4 +1,8 @@
 function cambio_aficiones(evt, edad, aficiones) {
+    for (let i = 0; i < aficiones.length; i++) {
+        aficiones[i].disabled = false
+    }
+
     if (edad[0].checked) {
         aficiones[0].nextSibling.textContent = "Fútbol"
         aficiones[1].nextSibling.textContent = "Música"
