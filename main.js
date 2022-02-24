@@ -61,7 +61,7 @@ function main() {
         error_dni = ejercicio_extra(evt, dni, error_dni)
     })
 
-    btn_random.addEventListener("mousedown", (evt) => {
+    btn_random.addEventListener("click", (evt) => {
         contador = aleatorio(evt, dni, edad, selector_aficiones, selector_ocupacion)
     })
 

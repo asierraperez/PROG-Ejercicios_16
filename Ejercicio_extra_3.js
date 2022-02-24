@@ -1,5 +1,5 @@
 function aleatorio(evt, dni_random, edad_random, selector_random, ocupacion_random) {
-
+    //DNI aleatorio
     var n_dni
     var dni = ""
     var Mayus = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "U", "V", "W", "X", "Y", "Z"]
@@ -14,7 +14,7 @@ function aleatorio(evt, dni_random, edad_random, selector_random, ocupacion_rand
     console.log(dni)
     dni_random.value = dni
 
-
+    //nombre y apellidos aleatorios
     var array_nombres = ["Álvaro", "Ana", "Rocío", "Iago", "Adrián", "Pablo", "Marta", "Marina"]
     var array_apellidos = ["Sierra", "Pérez", "Vázquez", "Pais", "Arce", "Rodríguez", "Abalde", "Vila", "García", "Alonso"]
     var nombre_random = Math.floor(Math.random() * array_nombres.length)
@@ -29,12 +29,18 @@ function aleatorio(evt, dni_random, edad_random, selector_random, ocupacion_rand
     document.getElementById("nombre").value = nombre
     document.getElementById("apellidos").value = apellidos
 
+    //selecciona edad aleatoria
     var selector_edad_random = Math.floor(Math.random() * edad_random.length)
     document.getElementsByClassName("radio")[selector_edad_random].checked = true
     //edad_random[selector_edad_random].checked = true
     cambio_aficiones(evt, edad_random, selector_random)
     cambio_ocupaciones(evt, edad_random, ocupacion_random)
 
+    //aficiones aleatorias
+    for (let i = 0; i < selector_random.length; i++) {
+        selector_random[i].checked = false
+
+    }
     var aux_cuenta = 0
     var n_aficiones = Math.floor(Math.random() * (3 - 1) + 1)
     console.log(n_aficiones)
@@ -43,10 +49,20 @@ function aleatorio(evt, dni_random, edad_random, selector_random, ocupacion_rand
         aux_cuenta++
     }
 
+    //Estado aleatorio
     var estado = document.getElementById("estado")
-    estado[Math.floor(Math.random() * (estado.length - 1) + 1)].selected = true
+    for (let i = 0; i < estado.length; i++) {
+        estado[i].selected = false
 
-    ocupacion_random[Math.floor(Math.random() * (ocupacion_random.length - 1) + 1)].selected = true
+    }
+    estado[Math.floor(Math.random() * (estado.length - 1))].selected = true
+
+    //ocupación aleatoria
+    for (let i = 0; i < ocupacion_random.length; i++) {
+        ocupacion_random[i].selected = false
+
+    }
+    ocupacion_random[Math.floor(Math.random() * (ocupacion_random.length - 1))].selected = true
     return aux_cuenta
 
 

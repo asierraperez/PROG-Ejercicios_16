@@ -1,6 +1,6 @@
-function ejercicio_extra(evt, aux_error_dni) {
+function ejercicio_extra(evt, nif, aux_error_dni) {
     var error_anterior = aux_error_dni
-    var aux_nif = document.getElementById("nif")
+    var aux_nif = nif
     var aux_dni = aux_nif.value.toLowerCase()
     var error_anterior
     var body = document.getElementsByTagName("body")
